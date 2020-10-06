@@ -1,9 +1,10 @@
 FROM node:12.18.1-alpine
-ARG NODE_ENV
-ARG PORT
+ENV NODE_ENV = development
+ENV PORT = 7001
 WORKDIR /app
-COPY . .
+ADD package.json /app
 RUN apk add python g++ make
-RUN npm install
+RUN npm i --silent
 RUN npm i nodemon -g
-CMD [ "npm", "run", "dev" ]
+COPY . /app
+CMD nodemon index.js
