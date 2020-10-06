@@ -12,7 +12,6 @@ services:
         container_name: node
         volumes:
             - ./:/app
-            - nodemodules:/src/node_modules
-        command: node index.js
+            - nodemodules:/app/node_modules
 volumes:
     nodemodules: {}

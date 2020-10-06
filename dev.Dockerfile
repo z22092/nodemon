@@ -7,4 +7,4 @@ RUN apk add python g++ make
 RUN npm i --silent
 RUN npm i nodemon -g
 COPY . /app
-CMD nodemon index.js
+CMD npm run dev
